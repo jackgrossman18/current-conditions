@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+<hr>
+<section class="row">
+  <h2>Sign Up for the Current Conditions App:</h2>
+  <h4>Register now to find out what it's like at your spot</h4>
+<div class="signup">
+  <form action="{{userController.show}}" method="POST" class="auth-form">
+    <p class="input-field">
+      <input type="email" name="email" placeholder="E-mail">
+    </p>
+    <p class="input-field">
+      <input type="password" name="password" placeholder="Password">
+    </p>
+    <p class="input-field">
+      <input type="submit" value="Sign Up" class="btn">
+    </p>
+  </form>
+</div>
+</section>
+</body>
+</html>

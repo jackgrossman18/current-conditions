@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+</head>
+<h1>{{title}}</h1>
+<body>
+<div class="favorite-spot">
+<div class="spotmap">{{map}}</div>
+<div class="oceant">{{otemp}}</div>
+<div class="wind">{{wind}}</div>
+<div class="swell">{{swell}}</div>
+</div>
+</body>
+</html>
+
+<div class="container">
+        <div id='map' style='width: 800px; height: 400px;'></div>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiamFja2dyb3NzbWFuIiwiYSI6ImNpbWZqeG1hMjAxcHl2Y202cmhlZGRjYXcifQ.1-so8LElW5dTGT5o941u1w';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/jackgrossman/cji69g1bv12ja2rnqs01fggeu',
+            zoom: 15.20,
+            center: [-74.555995, 39.282311]
+        });
+        </script>
+<div class="container">
+        <div id='map' style='width: 800px; height: 400px;'></div>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiamFja2dyb3NzbWFuIiwiYSI6ImNpbWZqeG1hMjAxcHl2Y202cmhlZGRjYXcifQ.1-so8LElW5dTGT5o941u1w';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/jackgrossman/cji69g1bv12ja2rnqs01fggeu',
+            zoom: 15.20,
+            center: [-74.415735, 39.360754]
+        });
+        </script>
