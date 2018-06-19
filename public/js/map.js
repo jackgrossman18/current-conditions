@@ -1,4 +1,5 @@
-const clicked = document.querySelector('.clicked')
+const button = document.getElementsById('spot')
+
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamFja2dyb3NzbWFuIiwiYSI6ImNpbWZqeG1hMjAxcHl2Y202cmhlZGRjYXcifQ.1-so8LElW5dTGT5o941u1w";
@@ -191,7 +192,6 @@ map.on("load", function() {
     })
 });
 
-const button = document.getElementsById('spot')
 
 function mswRanking(ranking) {
     let rating = '';
