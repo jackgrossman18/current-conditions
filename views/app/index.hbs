@@ -1,21 +1,13 @@
 <body>
 {{!-- make main a div / give a container class / put flex stuff on the container class --}}
 <div class="navcontainer">
-    <div class="nav"><a href="/users/new">Create User Account</a></div><div class="nav"><a href="/spots">Select Favorite Spots</a></div><div class="nav"><a href="/user/{{currentUser.id}}">My Spots</a></div>
-    <div class="nav"><a href="#">Login</a></div>
+    <div class="nav"><a href="/users/new">Create User Account</a></div><div class="nav"><a href="/spots">Select Favorite Spots</a></div><div class="nav"><a href="/users/my_favorite_spots">My Spots</a></div>
+    <div class="nav"><a href="/users/login">Login</a></div>
 </div>
 <div class="backgroundimage">
 <div class="slider">All the Forecasts for Your Surf Spot</div>
 </div>
 <div id='map'></div>
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiamFja2dyb3NzbWFuIiwiYSI6ImNpbWZqeG1hMjAxcHl2Y202cmhlZGRjYXcifQ.1-so8LElW5dTGT5o941u1w';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/jackgrossman/cji69g1bv12ja2rnqs01fggeu',
-            zoom: 10,
-            center: [-74.498492, 39.320650]
-        });
-    </script>
+<script src="js/map.js"></script>
 </body>
 </html>

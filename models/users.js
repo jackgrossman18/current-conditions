@@ -4,15 +4,15 @@ var bcrypt = require('bcrypt-nodejs')
 const Schema = mongoose.Schema
 
 const User = new Schema({
-    email: { type: String },
-    password: { type: String },
-    createdAt: Date,
-    favoriteSpots: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Spots'
-        }
-    ]
+        email: { type: String },
+        password: { type: String },
+        createdAt: Date,
+        favoriteSpots: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Spots'
+            }
+        ]
 
 });
 
@@ -21,7 +21,7 @@ User.methods.encrypt = function(password) {
 }
 
 User.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.local.password)
+    return bcrypt.compareSync(password, this.password)
 }
 
 // User.pre('save', function(next) {

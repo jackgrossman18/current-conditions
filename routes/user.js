@@ -9,21 +9,23 @@ const passport = require('passport')
 router.get('/', applicationController.index)
 
 // Get Signup Page to create an newuser 
-router.get('/new', userController.newUser)
+router.get('/new', userController.usersignUp)
 
 // POST to create new user
-router.post('/', userController.createUser)
+router.post('/new', userController.createUser)
+
+// GET all of users spots
+// router.get('/my_favorite_spots', userController.myfavoriteSpots)
 
 // GET login page for users with an account
 router.get('/login', userController.login)
 
 //POST for users to be redirected to once they enter thier login information
-router.post('/login', userController.createLogin)
-
-// Post page for successful login, directs to myspots page
-router.post('/:id', userController.show)
+router.post('/login', userController.newLogin)
 
 // Get page allowing users that are signed in to logout
 router.get('/logout', userController.logout)
+
+router.get('/secret', userController.secret)
 
 module.exports = router

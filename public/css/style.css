@@ -24,19 +24,18 @@
     text-decoration:none;
     color: #4083c1;
     /* text-shadow: -1px 0 lightgreen, 0 1px lightgreen, 1px 0 lightgreen, 0 -1px lightgreen; */
-    transform: scale(1,1);
+    /* transform: scale(1,1); */
 }
 
 .nav:hover {
-    transform: scale(1.01, 1.01);
-    padding: 1px 1px;
+    /* transform: scale(1.01, 1.01); */
     border-bottom: solid 2px #4083c1;  
 }
 
 #map {
     align-items: center;
     width: 100%;
-    height: 400px;
+    height: 800px;
     border: solid 1.5px white;
 }
 
@@ -85,4 +84,91 @@
 #spotsmap {
     width: 100%;
     height: 400px;
+}
+.glyphicon {
+    font-size: 20px;
+}
+.fav {
+    width: 800px;
+    height: 400px;
+    background-color: #FFFFF0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+}
+.flat {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background-color: slategray;
+    padding: 1px 2px;
+}
+
+.verypoor {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background-color: #5f211e;
+    padding: 1px 2px;
+}
+
+.poor {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background-color: #5f211e;
+    padding: 1px 2px;
+}
+.fair {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background-color: #182d72;
+    padding: 1px 2px;
+
+}
+.good {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background-color: #295332;
+    padding: 1px 2px;
+}
+.fonts {
+    font-family: 'Roboto Mono', monospace;
+    color: #1c1c1c;
+    padding: 1px 2px;
+}
+#bigmap{
+    align-items: center;
+    width: 100%;
+    height: 800px;
+    border: solid 1.5px white;
+}
+button {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+    justify-content: center;
+    width: 100%;
+}
+button:active {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    outline: none;
+    border: 1px solid black;
+    justify-content: center;
+    width: 100%;
+}
+.redman_1bar {
+    background-image: url("./img/sprites.png");
+    background-position: -20px -537px;
+    width: 19px;
+    height: 20px;
+}
+.greenman_1bar {
+    background-image: url("./img/sprites.png");
+    background-position: -391px -503px;
+    width: 19px;
+    height: 20px;
 }
