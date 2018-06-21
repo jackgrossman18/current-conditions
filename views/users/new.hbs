@@ -7,7 +7,7 @@
     <p class="alert">{{message}}</p>
   {{/if}}
 <div class="signup">
-  <form action="" method="POST" class="auth-form">
+  <form action="{{req.user._id}}" method="POST" class="auth-form">
     <p class="input-field">
       <input type="email" name="email" placeholder="E-mail">
     </p>

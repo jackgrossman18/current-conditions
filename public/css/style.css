@@ -1,8 +1,36 @@
-.backgroundimage {
-    width: auto;
+.container {
+    width: 100%;
+}
+
+.second-slider {
+    font-family: 'Roboto Mono', monospace;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);    
+    font-size: 18px;
+    color: black;
+    width: 100%;
     height: 500px;
     padding: 20px;
-    background-image: url('https://cdn.surfer.com/uploads/2014/04/54.6-DAY-1280x1024.jpg');
+    background-image: url('https://cdn0.iconfinder.com/data/icons/hand-conversation/91/Hand_17-512.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+}
+form {
+    width: 100%;
+    height: 400px;
+    background-color: rgba(107, 182, 235, 0.4);
+    font-family: 'Robot Mono', monospace;
+    color: black;
+}
+
+.backgroundimage {
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    background-image: url('https://d3n32ilufxuvd1.cloudfront.net/56f1bc76fd71ff8b66c3eca9/1036092/upload-e7be7ba0-4446-11e8-bc5e-65bbe6a92450.jpg');
+    /* background-image: url('https://cdn.surfer.com/uploads/2014/04/54.6-DAY-1280x1024.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -41,11 +69,11 @@
 
 .slider {
     position: relative;
-    text-align: center;
-    top: 50%;
+    text-align: left;
+    top: 2%;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 25px;
     color: white;
 }
 
@@ -71,11 +99,6 @@
     background-color: lightgreen;
     font-family: 'Roboto Mono', monospace;
     color: white;
-}
-
-.auth-form {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 2px;
 }
 .headerimg {
     display: flex;
@@ -128,8 +151,28 @@
     background-color: #295332;
     padding: 1px 2px;
 }
+.t-font {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1c1c1c;
+    padding: 1px 2px;
+
+}
+.rat {
+    width: 100%;
+}
+.h-font {
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    color: #1c1c1c;
+    padding: 1px 2px;
+}
 .fonts {
     font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
     color: #1c1c1c;
     padding: 1px 2px;
 }
@@ -160,6 +203,18 @@ button:active {
     justify-content: center;
     width: 100%;
 }
+
+footer {
+    font-family: 'Roboto Mono', monospace;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    color: white;
+    background-color: #f8cb76;
+    text-decoration: none;
+}
+
 .redman_1bar {
     background-image: url("./img/sprites.png");
     background-position: -20px -537px;
@@ -171,4 +226,16 @@ button:active {
     background-position: -391px -503px;
     width: 19px;
     height: 20px;
+}
+.staticb {
+    width: auto;
+    height: auto;
+    background-image: url('https://d3n32ilufxuvd1.cloudfront.net/56f1bc76fd71ff8b66c3eca9/1000773/upload-7761b620-24ab-11e8-b06f-013e2b5342c9.jpg');
+    /* background-image: url('https://cdn.surfer.com/uploads/2014/04/54.6-DAY-1280x1024.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+
+
 }

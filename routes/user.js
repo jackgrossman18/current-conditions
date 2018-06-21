@@ -5,6 +5,9 @@ const applicationController = require('../controllers/application')
 var LocalStrategy = require('passport-local').Strategy
 const passport = require('passport')
 
+
+
+
 // Get Index
 router.get('/', applicationController.index)
 
@@ -25,6 +28,8 @@ router.post('/login', userController.newLogin)
 
 // Get page allowing users that are signed in to logout
 router.get('/logout', userController.logout)
+
+router.post('/:id', userController.show)
 
 router.get('/secret', userController.secret)
 

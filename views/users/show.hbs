@@ -1,1 +1,12 @@
-<h2> {{newUser.local.email}} </h2>
+<section class="favspots">
+  <h2>{{currentUser.email}}</h2>
+  {{#if curretUser.favoritespots}}
+    <div class="allspots">
+      {{#each currentUser.favoritespots}}
+         {{> 'Spots'}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>You don't seem to have selected any spots</p>
+  {{/if}}
+</section>

@@ -1,5 +1,6 @@
 const mongoose = require('../db/connection')
 const Spots = require('../models/spots')
+const Comments = require('../models/comments')
 var bcrypt = require('bcrypt-nodejs')
 const Schema = mongoose.Schema
 
@@ -12,7 +13,8 @@ const User = new Schema({
                 type: Schema.Types.ObjectId,
                 ref: 'Spots'
             }
-        ]
+        ],
+        comments: { type: Schema.Types.ObjectId, ref: 'Comments'}
 
 });
 

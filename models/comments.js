@@ -7,7 +7,7 @@ const Comments = new Schema({
         type: Date,
         default: Date.now()
     },
-    author: {type: Schema.Types.ObjectId, ref: 'User', default: 'Anon'},
+    author: {type: Schema.Types.ObjectId, ref: 'User'},
 })
 
 module.exports = mongoose.model("Comments", Comments)

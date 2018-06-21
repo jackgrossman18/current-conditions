@@ -6,8 +6,11 @@ var map = new mapboxgl.Map({
   zoom: 6.67,
   center: [-74.518183, 39.947325]
 });
+// map.addControl(new MapboxDirections({
+//     accessToken: mapboxgl.accessToken
+// }), 'top-left')
 map.on("load", function() {
-    map.loadImage('https://cdn1.iconfinder.com/data/icons/hands-pt-6/100/001_-_shaka-512.png', function(error, image) {
+    map.loadImage('https://cdn0.iconfinder.com/data/icons/hand-conversation/91/Hand_17-512.png', function(error, image) {
         if (error) throw error;
         map.addImage('shaka-sign', image);
         // Add a layer showing the state polygons.
@@ -71,7 +74,7 @@ map.on("load", function() {
               coordinates: [-73.812034, 40.582714]
             },
             properties: {
-              "Surf_Spot_Name": "Rockaway 90st Jetty",
+              "Surf_Spot_Name": "Rockaway 90th St. Jetty",
               Location: "Long Beach, NY",
               MSW_Rating:
                 "https://magicseaweed.com/api/0be72c50101bffb095ef01df8958a606/forecast/?spot_id=384",
@@ -125,6 +128,41 @@ map.on("load", function() {
               SwellInfo_Rating: "",
               icon: "shaka"
             }
+        },
+            {
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: [-71.293, 41.469]
+                },
+                properties: {
+                  "Surf_Spot_Name": "Ruggles",
+                  Location: "Newport, RI",
+                  MSW_Rating:
+                    "https://magicseaweed.com/api/0be72c50101bffb095ef01df8958a606/forecast/?spot_id=391",
+                  Surfline_Rating: "http://api.surfline.com/v1/forecasts/2147",
+                  SwellInfo_Rating: "",
+                  icon: "shaka"
+                }
+                },
+        
+                {
+                    type: "Feature",
+                    geometry: {
+                      type: "Point",
+                      coordinates: [-75.081169, 38.338461]
+                    },
+                    properties: {
+                      "Surf_Spot_Name": "8th Street",
+                      Location: "Ocean City, MD",
+                      MSW_Rating:
+                        "",
+                      Surfline_Rating: "http://api.surfline.com/v1/forecasts/4406",
+                      SwellInfo_Rating: "",
+                      icon: "shaka"
+                    },
+                    
+            
           }
             ]
             },
@@ -142,24 +180,76 @@ map.on("load", function() {
         map.on('click', 'points', function (e) {
             var surfline = fetch(e.features[0].properties.Surfline_Rating)
             .then(res => res.json())
-            var msw = fetch(e.features[0].properties.MSW_Rating)
-            .then(res => res.json())
+            // var msw = fetch(e.features[0].properties.MSW_Rating, 
+            //     {
+            //     mode: "no-cors",
+            //     method: "GET",
+            //     headers: {
+            //       "Accept": "application/json"
+            //     }
+            //   })
+            //     .then(response => response.json())
+            //     .then(response => {
+            //       return dispatch({
+            //         type: "GET_CALL",
+            //         response: response
+            //       }
+                  
+            // })
+            // .then(res => res.json())
+            // .then(res => res.json())
+            // fetch(msw, {
+            //     mode: "no-cors",
+            //     method: "GET",
+            //     headers: {
+            //         "Accept": "application/json"
+            //     }
+            // })
+            // .then(response => response.json())
+            // .then(response => {
+            //     return dispatch({
+            //         type: "GET_CALL",
+            //         response: response
+            //     });
+            // }).then( res => console.log(res))
             var allRequests = {"surfline":{}, "msw": {}};
-            Promise.all([surfline, msw]).then(function (values) {
+            Promise.all([surfline]).then(function (values) {
                 allRequests.surfline = values[0]
-                allRequests.msw = values[1]
+                // allRequests.msw = values[1]
                 return allRequests
             })
             .then(res => {
+                // <p class="fonts"> MSW Rating: ${mswRanking(res.msw[0].fadedRating)} </p>\n
                 var allConditions = 
-                `<p class="fonts"> Surfline Rating: ${surflineRanking(allRequests.surfline.Analysis.generalCondition[0])} </p>\n
-                 <p class="fonts"> MSW Rating: ${mswRanking(allRequests.msw[0].fadedRating)} </p>\n
-                 <button id="spot">Select Spot</button>`
+                `<h3 class="h-font">${e.features[0].properties.Surf_Spot_Name}<h3>\n
+                 <p class="t-font">Location:</p><p class="fonts" >${e.features[0].properties.Location}</p>\n
+                 <p class="t-font">Surfline Rating:</p><p class="fonts">${surflineRanking(res.surfline.Analysis.generalCondition[0])}</p>\n
+                 <button class="fonts" method="POST" action"user/{{currentUser._id}}?_method="PUT">Select Spot</button>`
                 new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
                 .setHTML(allConditions)
                 .addTo(map); 
             })       
+
+            // fetch('https://magicseaweed.com/api/0be72c50101bffb095ef01df8958a606/forecast/?spot_id=390')
+            // .then(res => {
+            //     if (res.status === 200) {
+            //         console.log('cool')
+            //         return {msw: res.json(), surfline: {Analysis: {generalCondition: [1]}}}
+            //     }
+            //     else {
+            //         console.error(res);
+            //         throw new Error(res);
+            //     }
+            // })
+            // .catch(err => {
+            //     console.error(err);
+            // })
+            // .then(res => {
+            //     console.log(res);
+            //     return res;
+            // })
+           
             // console.log(surfline)
             // fetch(surfline)
             // fetch(msw)
@@ -208,15 +298,15 @@ function surflineRanking(ranking) {
     let rating = '';
     // if ranking is poor, red
     if (ranking === 'FLAT') {
-        rating = `<span class="flat">FLAT</span>`
+        rating = `<span class="flat rat">FLAT</span>`
     } else if (ranking === 'VERY POOR') {
-        rating = `<span class="verypoor">VERY POOR</span>`
+        rating = `<span class="verypoor rat">VERY POOR</span>`
     } else if (ranking === 'POOR') {
-        rating = `<span class="poor">POOR</span>`
+        rating = `<span class="poor rat">POOR</span>`
     } else if (ranking === 'FAIR') {
-        rating = `<span class="fair">FAIR</span>`
+        rating = `<span class="fair rat">FAIR</span>`
     } else {
-        rating += `<span class="good">GOOD</span>`
+        rating += `<span class="good rat">GOOD</span>`
         }
         return rating;
     }
