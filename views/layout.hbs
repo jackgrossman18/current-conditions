@@ -12,12 +12,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-    {{#if currentUser}}
-    <a href="/logout">Logout</a>
-    {{else}}
-    <div class="nav"><a href="/users/new">Create User Account</a></div><div class="nav"><a href="/spots/index">Select Favorite Spots</a></div><div class="nav"><a href="/users/{{currentUser.id}}">My Spots</a></div>
-    <div class="nav"><a href="/users/login">Login</a></div>
-    {{/if}}
     <main class="container">
       {{{ body }}}
     </main>

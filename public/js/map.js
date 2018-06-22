@@ -185,50 +185,39 @@ map.on("load", function() {
             //     mode: "no-cors",
             //     method: "GET",
             //     headers: {
-            //       "Accept": "application/json"
-            //     }
-            //   })
-            //     .then(response => response.json())
-            //     .then(response => {
-            //       return dispatch({
-            //         type: "GET_CALL",
-            //         response: response
+            //         "Accept": "application/json, charset=utf-8"
             //       }
-                  
-            // })
-            // .then(res => res.json())
-            // .then(res => res.json())
-            // fetch(msw, {
-            //     mode: "no-cors",
-            //     method: "GET",
-            //     headers: {
-            //         "Accept": "application/json"
-            //     }
-            // })
-            // .then(response => response.json())
-            // .then(response => {
-            //     return dispatch({
-            //         type: "GET_CALL",
-            //         response: response
-            //     });
-            // }).then( res => console.log(res))
+                
+            //   })
+            //   .then(response => {
+            //       return response.json();
+            //   })
+            //   .then(data => {
+            //       return data;
+            //   })
+            //   .catch(error => {
+            //       return error;
+            //   })
             var allRequests = {"surfline":{}, "msw": {}};
             Promise.all([surfline]).then(function (values) {
                 allRequests.surfline = values[0]
                 // allRequests.msw = values[1]
+                console.log(allRequests)
                 return allRequests
             })
             .then(res => {
-                // <p class="fonts"> MSW Rating: ${mswRanking(res.msw[0].fadedRating)} </p>\n
+                // <p class="fonts"> MSW Rating: ${mswRanking(allRequests.msw[0].fadedRating)} </p>\n
                 var allConditions = 
                 `<h3 class="h-font">${e.features[0].properties.Surf_Spot_Name}<h3>\n
                  <p class="t-font">Location:</p><p class="fonts" >${e.features[0].properties.Location}</p>\n
                  <p class="t-font">Surfline Rating:</p><p class="fonts">${surflineRanking(res.surfline.Analysis.generalCondition[0])}</p>\n
-                 <button class="fonts" method="POST" action"user/{{currentUser._id}}?_method="PUT">Select Spot</button>`
+                
+                 <button id="new" class="fonts" method="POST" action"${req.user.id}"?_method="PUT"><label for="spots">Select Spot</label>
+                 <input class="form-control" type="hidden" name="favoriteSpot" value="${e.features[0].properties.Surf_Spot_Name}"></button>`
                 new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
                 .setHTML(allConditions)
-                .addTo(map); 
+                .addTo(map), {once:true}; 
             })       
 
             // fetch('https://magicseaweed.com/api/0be72c50101bffb095ef01df8958a606/forecast/?spot_id=390')
@@ -280,6 +269,7 @@ map.on("load", function() {
 });
 
 
+
 function mswRanking(ranking) {
     let rating = '';
     // if ranking is zero, sad face
@@ -293,7 +283,6 @@ function mswRanking(ranking) {
     // loop over ranking.
     return rating;
 }
-
 function surflineRanking(ranking) {
     let rating = '';
     // if ranking is poor, red

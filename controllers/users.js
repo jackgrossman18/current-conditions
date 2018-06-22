@@ -72,6 +72,17 @@ function show (req, res)  {
       });
   }
 
+function seedEvent (req, res)  {
+    const Users = [
+        {email: currentUser.email},
+        {favoriteSpots: currentUser.favoriteSpots}
+    ]
+    for (user of users) {
+        var newUser = new User(user)
+        newUser.save()
+    }
+    res.send('Database seeded!')
+}
 module.exports = {
 
     login: login,

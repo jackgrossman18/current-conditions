@@ -2,11 +2,13 @@
 <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.css' type='text/css' />
 <body>
 {{!-- make main a div / give a container class / put flex stuff on the container class --}}
+
 <div class="navcontainer">
-    {{#if currentUser}}
-    <a href="/logout">Logout</a>
+     {{#if _id}}
+     <div class="nav"><a href="/spots/my-favorite-spots">Favorite Spots</a></div>
+     <div><a href="/logout">Logout</a></div>
     {{else}}
-    <div class="nav"><a href="/users/new">Create User Account</a></div><div class="nav"><a href="/spots/index">Select Favorite Spots</a></div><div class="nav"><a href="/users/show{{currentUser._id}}">My Spots</a></div>
+    <div class="nav"><a href="/users/new">Create User Account</a></div><div class="nav"><a href="/users/show{{currentUser._id}}">My Spots</a></div>
     <div class="nav"><a href="/users/login">Login</a></div>
     {{/if}}
 </div>
@@ -15,7 +17,7 @@
 </div>
 <div class="second-slider">
 <div>Select Your Spot<br>
-                    Add it to Your Watchlist
+Add it to Your Watchlist
 </div>
 </div>
 <div id='map'></div>

@@ -6,7 +6,9 @@ var LocalStrategy = require('passport-local').Strategy
 const passport = require('passport')
 
 
+// Seed database with User information
 
+// router.get('/events', userController.seedEvent)
 
 // Get Index
 router.get('/', applicationController.index)

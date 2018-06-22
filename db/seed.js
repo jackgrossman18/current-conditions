@@ -1,84 +1,23 @@
 const User = require("../models/users");
-// const { Tweet } = require("../models/Tweet");
+const Spots = require("../models/spots")
 const bcrypt = require("bcrypt-nodejs");
 
 // const createPassword = password =>
 // crypt.hashSync(password, bcrypt.genSaltSync(8), null);
 
+// User.find({})
+// .then(() => {
+    // User.findByIdAndUpdate(id, { $set: { favoriteSpots: 'large' }}, { new: true }, function (err, tank) {
+    //     if (err) return handleError(err);
+    //     res.send(User);
+// User.update.remove(() => {
 // User.find({}).remove(() => {
-// User.find({}).remove(() => {
-//     // let bugs = User.create({
-//     //   local: {
-//     //     email: "bugsbunny@gmail.com",
-//     //     password: createPassword("bugsbunny")
 //       }
 //     }).then(user => {
 //       Promise.all([
-//         User.create({
-//         //   content: "eh, what's up doc?",
-//         //   author: user._id
-//         }).then(user => {
-//           user.tweets.push(tweet);
-//         }),
-//         User.create({
-//         //   content: "That's all, folks!",
-//         //   author: user._id
-//         }).then(tweet => {
-//           user.tweets.push(tweet);
-//         })
+//         User.create({}).then(user => {}),
+//         User.create({}).then(tweet => {})
 //       ]).then(() => {
 //         user.save(err => console.log(err));
 //       });
 //     });
-
-//     let daffy = User.create({
-//       local: {
-//         // email: "daffyduck@gmail.com",
-//         // password: createPassword("daffyduck")
-//       }
-//     }).then(user => {
-//       Promise.all([
-//         Tweet.create({
-//         //   content: "Who's this Duck Dodgers any how?",
-//         //   author: user._id
-//         }).then(tweet => {
-//           user.tweets.push(tweet);
-//         }),
-//         User.create({
-//         //   content: "You're dethpicable.",
-//         //   author: user._id
-//         }).then(tweet => {
-//           user.tweets.push(tweet);
-//         })
-//       ]).then(() => {
-//         user.save(err => console.log(err));
-//       });
-//     });
-
-//     let elmer = User.create({
-//       local: {
-//         // email: "elmerfudd@gmail.com",
-//         // password: createPassword("elmerfudd")
-//       }
-//     }).then(user => {
-//       Promise.all([
-//         User.create({
-//         //   content:
-//         //     "Shh. Be vewy vewy quiet. I'm hunting wabbits! Huh-huh-huh-huh!",
-//           author: user._id
-//         }).then(tweet => {
-//           user.tweets.push(tweet);
-//         }),
-
-//         Tweet.create({
-//         //   content: "Kiww da wabbit!",
-//           author: user._id
-//         }).then(tweet => {
-//           user.tweets.push(tweet);
-//         })
-//       ]).then(() => {
-//         user.save(err => console.log(err));
-//       });
-//     });
-//   });
-// });
