@@ -20,4 +20,4 @@ Navigate the _Select Favorite Spots_ tab. You will then be prompted to select on
 
 **Accessing Your Spots**
 
-If you clikc on the _My Spots_ tab, you will be taken to a page where you will be presented with a map that shows all of the spots that you've favorited. Just clikc on the shaka icon, and you will receive an update on how it's looking at your local break.
+If you click on the _My Spots_ tab, you will be taken to a page where you will be presented with a map that shows all of the spots that you've favorited. Just clikc on the shaka icon, and you will receive an update on how it's looking at your local break.
