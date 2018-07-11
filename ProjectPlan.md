@@ -27,16 +27,15 @@ Will I need to use MongoDB, if I do, how will I pull info from the forecasting w
 
 Flow-Chart Links:
 
-*
-+[Front-End](https://drive.google.com/file/d/1HlEqllD3zzt6K8gfmNk-Mf3VW6wed0Ee/view)
+* [Front-End](https://drive.google.com/file/d/1HlEqllD3zzt6K8gfmNk-Mf3VW6wed0Ee/view)
  
-+[Back-End](https://drive.google.com/file/d/1joWsyWObv2zQaH_troowanxUnphAkCQM/view)
+* [Back-End](https://drive.google.com/file/d/1joWsyWObv2zQaH_troowanxUnphAkCQM/view)
 
 
 Wire-frame Links:
 
-+[Homepage](https://wireframe.cc/UchlPh)
-+[My Favorite Spots Page](https://wireframe.cc/NC5d9u)
-+_[Regional Filter Page](https://wireframe.cc/gggi8s)
-+[Current Conditions at Favorite Spot](https://wireframe.cc/puO9VS)
+* [Homepage](https://wireframe.cc/UchlPh)
+* [My Favorite Spots Page](https://wireframe.cc/NC5d9u)
+* [Regional Filter Page](https://wireframe.cc/gggi8s)
+* [Current Conditions at Favorite Spot](https://wireframe.cc/puO9VS)
 
