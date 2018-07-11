@@ -34,8 +34,8 @@ Back-End: Back End
 
 Wire-frame Links:
 
-[Homepage](https://wireframe.cc/UchlPh)
-[My Favorite Spots Page](https://wireframe.cc/NC5d9u)
-[Regional Filter Page](https://wireframe.cc/gggi8s)
-[Current Conditions at Favorite Spot](https://wireframe.cc/puO9VS)
+*[Homepage](https://wireframe.cc/UchlPh)
+*[My Favorite Spots Page](https://wireframe.cc/NC5d9u)
+*[Regional Filter Page](https://wireframe.cc/gggi8s)
+*[Current Conditions at Favorite Spot](https://wireframe.cc/puO9VS)
 
